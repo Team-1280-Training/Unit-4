@@ -384,7 +384,7 @@ Here, once the loop runs an iteration where if `i` between 3 and 6, exclusive, t
 
 ### >Exercise: Solving Equations
 
-['Equations.java`](Equations.java)
+[`Equations.java`](Equations.java)
 The function `y = (x - 3) * (x - 8) / (x - 6.0)` is equal to `2` for exactly 2 *positive integer* x values. \
 Write a program that prints both solutions, using a while loop. \
 Make sure to use `continue` to avoid zero division! \
@@ -530,7 +530,8 @@ public class TimesTables {
 -->
 
 ## >>Project: Guessing Game
-Create a program for a repeatable game where the user guesses a random number.
+Create a program for a repeatable game where the user guesses a random number. \
+[`Guess.java`](Guess.java)
 
 The user has 10 guesses to find a random number from `1` to `1000` inclusive. \
 Before each guess, the number of guesses left is printed (starting at 10).
