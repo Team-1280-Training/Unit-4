@@ -6,7 +6,7 @@ Loops are what we use to execute a block of code repeatedly while a given condit
 The types of loops we'll cover now are **for loops** and **while loops**. Although they look different, both of them repeat a block of code based on a condition. \
 Like conditionals, loops are also block statements.
 
-An **iteration** is the term for a single execution of the code block, or **body**, of the loop. \
+An **iteration** is the term for a single execution of the code block, or **body**, of the loop. 
 
 ### Table of Contents
 - [Introduction](#introduction)
@@ -131,12 +131,79 @@ When $a \ne 0$, the solutions to the equation $ax^2 + bx + c = 0$ are given by t
 x = {-b \pm \sqrt{b^2-4ac} \over 2a}
 ```
 
+[`QuadraticFormula.java`](QuadraticFormula.java)
 1. Prompt the user to enter the `double` coefficients `a`, `b`, `c`.
 2. Use the quadratic formula. (Assume that the coefficient `a` is not zero.)
 3. With the formula, there are either 2, 1, or 0 real solutions, depending on the number inside the square root (called the discriminant) in the formula.
     - If the discriminant is positive, there are two real solutions because of the ±. Print both.
     - If the discriminant is equal to 0.0, there is only one real solution. Print it.
     - If the discriminant is negative, there are no real solutions. Print `No solution`.
+4. Test your program! Try these examples:
+    - `a = 1`, `b = -5`, and `c = 6` should print `2` and `3`
+    - `a = 1`, `b = -4`, and `c = 4` should print `2`
+    - `a = 1`, `b = 1`, and `c = 1` should print `No solution`
+
+<details><summary>Solution code</summary>
+
+```java
+import java.util.Scanner;
+
+public class QuadraticFormula {
+    public static void main(String[] args) throws Exception {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Please enter a: ");
+        double a = input.nextDouble();
+        System.out.println("Please enter b: ");
+        double b = input.nextDouble();
+        System.out.println("Please enter c: ");
+        double c = input.nextDouble();
+
+        double discriminant = Math.sqrt((b * b) - (4 * a * c));
+        if (discriminant > 0.0) {
+            double solutionOne = (-b + discriminant) / (2 * a);
+            double solutionTwo = (-b - discriminant) / (2 * a);
+            System.out.println("Solution 1: " + solutionOne);
+            System.out.println("Solution 2: " + solutionTwo);
+        } else if (discriminant == 0.0) {
+            double solution = -b / (2 * a);
+            System.out.println("Solution: " + solution);
+        } else {
+            System.out.println("No solution");
+        }
+    }
+}
+```
+Output:
+```
+Please enter a:
+1
+Please enter b:
+-5
+Please enter c:
+6
+Solution 1: 3.0
+Solution 2: 2.0
+```
+```
+Please enter a:
+1
+Please enter b:
+-4
+Please enter c:
+4
+Solution: 2.0
+```
+```
+Please enter a:
+1
+Please enter b:
+1
+Please enter c:
+1
+No solution
+```
+</details>
 
 ## While Loops
 A **while loop** loops through a block of code as long as a specific condition is true.
@@ -162,9 +229,44 @@ It's akin to an if statement that repeatedly runs until its condition is `false`
 
 ### >Exercise: Birthday Party
 You work at an arcade and have to prepare a 4-year-old's birthday party. They've demanded as many balloons as possible, but not over 6 or they *will* throw a tantrum. And because you're also very lazy, you'd rather have a while loop count the balloons for you.
+
+[`BirthdayParty.java`](BirthdayParty.java)
 1. Create a while loop to count balloons.
 2. Each iteration, print `MORE BALLOONS!!` and then the current balloon count on the next line.
 3. After the 6th balloon, print `STOP!! ENOUGH BALLOONS!!`
+
+<details><summary>Solution code</summary>
+
+```java
+public class BirthdayParty {
+    public static void main(String[] args) {
+        int balloons = 0;
+        while (balloons < 6) {
+            System.out.println("MORE BALLOONS!!");
+            balloons++;
+            System.out.println(balloons);
+        }
+        System.out.println("STOP!! ENOUGH BALLOONS!!");
+    }
+}
+```
+Output:
+```
+MORE BALLOONS!!
+1
+MORE BALLOONS!!
+2
+MORE BALLOONS!!
+3
+MORE BALLOONS!!
+4
+MORE BALLOONS!!
+5
+MORE BALLOONS!!
+6
+STOP!! ENOUGH BALLOONS!!
+```
+</details>
 
 ## For Loops
 Counting a known number of iterations is a common use case. A **for loop** is used when we know exactly how many times we want to repeat a given block of code.
@@ -208,11 +310,43 @@ Note that you can still update the loop variable inside the body of a for loop, 
 ### >Exercise: Sums with Loops
 You want to calculate the sum of every integer from 0 to 10 using a loop.
 
+[`Sums.java`](Sums.java)
 1. Declare a variable called `sum` to store the final sum. Set it to 0 to start.
 2. Create a for loop that evaluates the value of a variable `i`, starting when `i` is 0 and looping as long as i is less than or equal to 10. `i` should be incremented by 1 after every iteration of the loop.
 3. In the body of the loop, set `sum` to its previous value plus `i`.
 4. After `sum` is updated, add a print statement inside the loop to print the value of `sum`.
 5. After the loop, add another print statement to print `Final sum: ` and the final value of `sum`.
+
+<details><summary>Solution code</summary>
+
+```java
+public class Sums {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 0; i <= 10; i++) {
+            sum += i;
+            System.out.println("Current sum: " + sum);
+        }
+        System.out.println("Final sum: " + sum);
+    }
+}
+```
+Output
+```
+Current sum: 0
+Current sum: 1
+Current sum: 3
+Current sum: 6
+Current sum: 10
+Current sum: 15
+Current sum: 21
+Current sum: 28
+Current sum: 36
+Current sum: 45
+Current sum: 55
+Final sum: 55
+```
+</details>
 
 ## Break and Continue Statements
 
@@ -249,10 +383,42 @@ for (int i = 0; i < 10; i++) {
 Here, once the loop runs an iteration where if `i` between 3 and 6, exclusive, the if statement evaluates to true and runs the `continue` statement, which cancels the current iteration and moves on to the next one. This results in `4` and `5` never being printed because that iteration was exited before the print statement.
 
 ### >Exercise: Solving Equations
+
+['Equations.java`](Equations.java)
 The function `y = (x - 3) * (x - 8) / (x - 6.0)` is equal to `2` for exactly 2 *positive integer* x values. \
 Write a program that prints both solutions, using a while loop. \
 Make sure to use `continue` to avoid zero division! \
 Stop once you have found the second solution.
+
+<details><summary>Solution Code</summary>
+
+```java
+public class Equations {
+    public static void main(String[] args) {
+        int solutions = 0;
+        int x = 0;
+
+        while (solutions < 2) {
+            if (x == 6) {
+                x++;
+                continue;
+            }
+            double y = (x - 3) * (x - 8) / (x - 6.0);
+            if (y == 2) {
+                solutions++;
+                System.out.println(x);
+            }
+            x++;
+        }
+    }
+}
+```
+Output:
+```
+4
+9
+```
+</details>
 
 ## Nested Loops
 Just like with conditional statements, loops can be **nested**!
@@ -299,6 +465,7 @@ After the inner loop finishes, there is a `System.out.println()` with no string 
 ### >Exercise: Times Tables
 You want to write a program that will print out the times tables for numbers 1-9.
 
+[`TimesTables.java`](TimesTables.java)
 Write two loops to go through the 9 rows and 9 columns. \
 In the body of the inner loop, print out the product of the current row and column, followed by a single space. \
 Each row of 9 products should appear on its own line.
@@ -328,6 +495,23 @@ Make the table columns properly aligned.
 8  16 24 32 40 48 56 64 72 
 9  18 27 36 45 54 63 72 81 
 ```
+
+<details><summary>Solution Code</summary>
+
+No bonus challenge:
+```java
+public class TimesTables {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 1; j <= 9; j++) {
+                System.out.print(i * j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+</details>
 
 ## Recap
 - `double` has more precision than `int`, and data has limited precision
