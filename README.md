@@ -549,7 +549,7 @@ After each guess, the program tells the user if the guess is too low, too high, 
 The game ends when the player gets the number, or when the player uses all ten guesses. \
 A win message is printed for a win, and for a loss, a lose message including the random number is printed.
 
-After the game ends, the user may input `y` or `Y` to play again; all other inputs exit the game.
+After the game ends, the user may choose to play again (new game) or not (exit program).
 
 The random number generator for an `int` from `1` to `1000` inclusive is provided for you. \
 Use the expression `randomNumber()` to get one:
@@ -591,7 +591,7 @@ Too high!
 Guess a number between 1 and 1000:
 865
 Correct! You win!
-Play again? (y/n)
+Play again (y/n)?
 y
 10 guesses left
 Guess a number between 1 and 1000:
@@ -634,7 +634,7 @@ Guess a number between 1 and 1000:
 195
 Too low!
 You lost. The number was 199
-Play again? (y/n)
+Play again (y/n)?
 n
 Exiting.
 ```
