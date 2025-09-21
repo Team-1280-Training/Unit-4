@@ -131,17 +131,25 @@ When $a \ne 0$, the solutions to the equation $ax^2 + bx + c = 0$ are given by t
 x = {-b \pm \sqrt{b^2-4ac} \over 2a}
 ```
 
+There are either 2, 1, or 0 real solutions for $x$. This depends on the value of the number inside the square root, the discriminant.
+```math
+discriminant = b^2-4ac
+```
+If the discriminant is positive, then there are two different real solutions because of the plus or minus ($\pm$) on the square root. \
+If the discriminant is equal to 0, then there is only one real solution because $\pm \sqrt{0} = 0$ . \
+If the discriminant is negative, then there are no real solutions because the square root of a negative number is imaginary.
+
 [`QuadraticFormula.java`](QuadraticFormula.java)
 1. Prompt the user to enter the `double` coefficients `a`, `b`, `c`.
 2. Use the quadratic formula. (Assume that the coefficient `a` is not zero.)
-3. With the formula, there are either 2, 1, or 0 real solutions, depending on the number inside the square root (called the discriminant) in the formula.
-    - If the discriminant is positive, there are two real solutions because of the ±. Print both.
-    - If the discriminant is equal to 0.0, there is only one real solution. Print it.
-    - If the discriminant is negative, there are no real solutions. Print `No solution`.
+3. Print the solution(s)
+    - If there are 2 real solutions, print both.
+    - If there is only one real solution, print it.
+    - If there are no real solutions, print `No real solution`.
 4. Test your program! Try these examples:
-    - `a = 1`, `b = -5`, and `c = 6` should print `2` and `3`
-    - `a = 1`, `b = -4`, and `c = 4` should print `2`
-    - `a = 1`, `b = 1`, and `c = 1` should print `No solution`
+    - `a = 1`, `b = -5`, and `c = 6` should print `3.0` and `2.0`
+    - `a = 1`, `b = -4`, and `c = 4` should print `2.0`
+    - `a = 0.5`, `b = 1`, and `c = 1` should print `No real solution`
 
 <details><summary>Solution code</summary>
 
@@ -159,17 +167,17 @@ public class QuadraticFormula {
         System.out.println("Please enter c: ");
         double c = input.nextDouble();
 
-        double discriminant = Math.sqrt((b * b) - (4 * a * c));
+        double discriminant = (b * b) - (4 * a * c);
         if (discriminant > 0.0) {
-            double solutionOne = (-b + discriminant) / (2 * a);
-            double solutionTwo = (-b - discriminant) / (2 * a);
+            double solutionOne = (-b + Math.sqrt(discriminant)) / (2 * a);
+            double solutionTwo = (-b - Math.sqrt(discriminant)) / (2 * a);
             System.out.println("Solution 1: " + solutionOne);
             System.out.println("Solution 2: " + solutionTwo);
         } else if (discriminant == 0.0) {
             double solution = -b / (2 * a);
             System.out.println("Solution: " + solution);
         } else {
-            System.out.println("No solution");
+            System.out.println("No real solution");
         }
     }
 }
@@ -196,12 +204,12 @@ Solution: 2.0
 ```
 ```
 Please enter a:
-1
+0.5
 Please enter b:
 1
 Please enter c:
 1
-No solution
+No real solution
 ```
 </details>
 
