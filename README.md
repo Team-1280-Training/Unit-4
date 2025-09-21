@@ -235,6 +235,8 @@ while (i < 10) {
 ```
 It's akin to an if statement that repeatedly runs until its condition is `false`.
 
+Sometimes, it is useful to have the condition just be `true`; this will make the loop run forever (until some sort of interruption such as an error or break).
+
 ### >Exercise: Birthday Party
 You work at an arcade and have to prepare a 4-year-old's birthday party. They've demanded as many balloons as possible, but not over 6 or they *will* throw a tantrum. And because you're also very lazy, you'd rather have a while loop count the balloons for you.
 
