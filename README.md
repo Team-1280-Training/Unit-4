@@ -158,14 +158,14 @@ import java.util.Scanner;
 
 public class QuadraticFormula {
     public static void main(String[] args) throws Exception {
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter a: ");
-        double a = input.nextDouble();
+        double a = scanner.nextDouble();
         System.out.println("Please enter b: ");
-        double b = input.nextDouble();
+        double b = scanner.nextDouble();
         System.out.println("Please enter c: ");
-        double c = input.nextDouble();
+        double c = scanner.nextDouble();
 
         double discriminant = (b * b) - (4 * a * c);
         if (discriminant > 0.0) {
