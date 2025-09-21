@@ -315,7 +315,17 @@ while (i < 11) { // condition
 }
 // Outputs (on separate lines): 0 1 2 3 4 5 6 7 8 9 10
 ```
-Note that you can still update the loop variable inside the body of a for loop, in addition to the update expression.
+Note that you can still update the loop variable inside the body of a for loop, in addition to the update expression. \
+Also, the condition can include anything and doesn't have to relate to the loop variable. It can even be empty (always true). \
+Example:
+```java
+for (double x = 1.0; Math.random() < 0.9; x *= Math.random()) {
+    System.out.println(x);
+    if (x < 0.5) {
+        x++;
+    }
+}
+```
 
 ### >Exercise: Sums with Loops
 You want to calculate the sum of every integer from 0 to 10 using a loop.
