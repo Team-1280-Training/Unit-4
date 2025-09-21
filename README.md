@@ -237,6 +237,9 @@ It's akin to an if statement that repeatedly runs until its condition is `false`
 
 Sometimes, it is useful to have the condition just be `true`; this will make the loop run forever (until some sort of interruption such as an error or break).
 
+> **Tip:** Use `Ctrl`+`C` while the *Terminal* (output/input) is selected to force quit the running program. \
+> This is a *keyboard interrupt*.
+
 ### >Exercise: Birthday Party
 [`BirthdayParty.java`](BirthdayParty.java) \
 You work at an arcade and have to prepare a 4-year-old's birthday party. They've demanded as many balloons as possible, but not over 6 or they *will* throw a tantrum. And because you're also very lazy, you'd rather have a while loop count the balloons for you.
@@ -544,9 +547,10 @@ public class TimesTables {
 - The `continue` statement skips the rest of the current iteration, and jumps to the start of the next one
 - Loops can be nested, which can represent a grid (typically with outer loop as the rows, inner loop as the values/columns)
 
-<!--
 ### Keyboard Shortcuts
--->
+| Keybinding | Command |
+| - | - |
+| `Ctrl`+`C` | Interrupt program in *Terminal* |
 
 ## >>Project: Guessing Game
 Create a program for a repeatable game where the user guesses a random number. \
