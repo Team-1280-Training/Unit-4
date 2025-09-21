@@ -157,7 +157,7 @@ If the discriminant is negative, then there are no real solutions because the sq
 import java.util.Scanner;
 
 public class QuadraticFormula {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter a: ");
