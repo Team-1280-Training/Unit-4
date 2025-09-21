@@ -124,6 +124,7 @@ One use is to determine divisibility, whether one number is a factor of another.
 It has the same operator precedence as multiplication and division.
 
 ### >Exercise: Quadratic Formula
+[`QuadraticFormula.java`](QuadraticFormula.java) \
 You've gotten tired of manually calculating with the quadratic formula. So now, you decide to write a program to do the calculations for you.
 
 When $a \ne 0$, the solutions to the equation $ax^2 + bx + c = 0$ are given by the quadratic formula:
@@ -139,7 +140,6 @@ If the discriminant is positive, then there are two different real solutions bec
 If the discriminant is equal to 0, then there is only one real solution because $\pm \sqrt{0} = 0$ . \
 If the discriminant is negative, then there are no real solutions because the square root of a negative number is imaginary.
 
-[`QuadraticFormula.java`](QuadraticFormula.java)
 1. Prompt the user to enter the `double` coefficients `a`, `b`, `c`.
 2. Use the quadratic formula. (Assume that the coefficient `a` is not zero.)
 3. Print the solution(s)
@@ -238,9 +238,9 @@ It's akin to an if statement that repeatedly runs until its condition is `false`
 Sometimes, it is useful to have the condition just be `true`; this will make the loop run forever (until some sort of interruption such as an error or break).
 
 ### >Exercise: Birthday Party
+[`BirthdayParty.java`](BirthdayParty.java) \
 You work at an arcade and have to prepare a 4-year-old's birthday party. They've demanded as many balloons as possible, but not over 6 or they *will* throw a tantrum. And because you're also very lazy, you'd rather have a while loop count the balloons for you.
 
-[`BirthdayParty.java`](BirthdayParty.java)
 1. Create a while loop to count balloons.
 2. Each iteration, print `MORE BALLOONS!!` and then the current balloon count on the next line.
 3. After the 6th balloon, print `STOP!! ENOUGH BALLOONS!!`
@@ -328,9 +328,9 @@ for (double x = 1.0; Math.random() < 0.9; x *= Math.random()) {
 ```
 
 ### >Exercise: Sums with Loops
+[`Sums.java`](Sums.java) \
 You want to calculate the sum of every integer from 0 to 10 using a loop.
 
-[`Sums.java`](Sums.java)
 1. Declare a variable called `sum` to store the final sum. Set it to 0 to start.
 2. Create a for loop that evaluates the value of a variable `i`, starting when `i` is 0 and looping as long as i is less than or equal to 10. `i` should be incremented by 1 after every iteration of the loop.
 3. In the body of the loop, set `sum` to its previous value plus `i`.
@@ -403,8 +403,7 @@ for (int i = 0; i < 10; i++) {
 Here, once the loop runs an iteration where if `i` between 3 and 6, exclusive, the if statement evaluates to true and runs the `continue` statement, which cancels the current iteration and moves on to the next one. This results in `4` and `5` never being printed because that iteration was exited before the print statement.
 
 ### >Exercise: Solving Equations
-
-[`Equations.java`](Equations.java)
+[`Equations.java`](Equations.java) \
 The function `y = (x - 3) * (x - 8) / (x - 6.0)` is equal to `2` for exactly 2 *positive integer* x values. \
 Write a program that prints both solutions, using a while loop. \
 Make sure to use `continue` to avoid zero division! \
@@ -483,9 +482,9 @@ In this example, we are using the statement `System.out.print(msg);`! This does 
 After the inner loop finishes, there is a `System.out.println()` with no string given, which starts a new line for the next iteration of the outer loop.
 
 ### >Exercise: Times Tables
+[`TimesTables.java`](TimesTables.java) \
 You want to write a program that will print out the times tables for numbers 1-9.
 
-[`TimesTables.java`](TimesTables.java)
 Write two loops to go through the 9 rows and 9 columns. \
 In the body of the inner loop, print out the product of the current row and column, followed by a single space. \
 Each row of 9 products should appear on its own line.
