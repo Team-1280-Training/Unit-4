@@ -562,7 +562,7 @@ After each guess, the program tells the user if the guess is too low, too high, 
 The game ends when the player gets the number, or when the player uses all ten guesses. \
 A win message is printed for a win, and for a loss, a lose message including the random number is printed.
 
-After the game ends, the user may choose to play again (new game) or not (exit program).
+After the game ends, the user may choose to play again (new game) or not (exit program), without having to restart the program.
 
 The random number generator for an `int` from `1` to `1000` inclusive is provided for you. \
 Use the expression `randomNumber()` to get one:
