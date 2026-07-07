@@ -467,7 +467,7 @@ for (int i = 0; i < 4; i++) {
     // inner loop
     for (int j = 0; j < 4; j++) {
         // Executed on every iteration of the inner loop, which is in
-        turn repeated on every iteration of the outer loop
+        // turn repeated on every iteration of the outer loop
         System.out.print("(" + i + ", " + j + ") ");
     }
     // Executed only on each iteration of the outer loop
